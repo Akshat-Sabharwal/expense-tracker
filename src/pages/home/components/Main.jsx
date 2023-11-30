@@ -12,9 +12,9 @@ export const Main = () => {
           cupidatat mollit exercitation voluptate id. Commodo ad exercitation
           magna ex in aliqua quis.
         </p>
+        <button>Get Started</button>
       </article>
       <img src={sideImage} alt="Save your expenses" />
-      <button>Get Started</button>
     </main>
   );
 };
