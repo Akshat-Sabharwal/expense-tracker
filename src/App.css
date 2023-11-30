@@ -6,21 +6,34 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body {
+    height: 100%;
+}
+
+button {
+    color: white;
+    background-color: #1A2E35;
+    outline: none;
+    border: none;
+    border-radius: 4rem;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    min-width: max-content;
+}
+
 header {
-    background-color: grey;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
+    margin: 0 0 1rem 6rem;
     padding: 1rem;
     max-width: 100%;
 }
 
 header span {
     margin-left: 2.5rem;
-    padding: 0rem 1rem;
+    padding: 1rem 1rem;
     max-width: fit-content;
-    background-color: darkgrey;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -34,22 +47,60 @@ header span img {
 header span h1 {
     font-size: 3rem;
     letter-spacing: 0.2rem;
+    color: #1A2E35;
 }
 
-header nav {
-    margin-right: 3rem;
+nav {
+    background-color: #D5F7E6;
+    position: fixed;
+    height: 100vh;
+    width: 6rem;
+    top: 0;
 }
 
-header nav ul {
+nav ul {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
     align-items: center;
-    gap: 3rem;
+    gap: 5rem;
     list-style: none;
+    margin: 2rem 0rem;
 }
 
-header nav ul li {
-    text-decoration: none;
+nav ul li:nth-child(1) .navbar-icon {
+    font-size: 2.5rem;
+}
+
+nav ul li .navbar-icon {
     font-size: 1.7rem;
+    color: #1A2E35;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 6rem;
+}
+
+main article {
+    margin: 0 0 0 5rem;
+    max-width: fit-content;
+    padding-right: 3rem;
+}
+
+main article h1 {
+    font-size: 4rem;
+    margin: -4.5rem 0 2rem 0;
+    line-height: 5rem;
+}
+
+main article button {
+    margin-top: 3rem;
+}
+
+main img {
+    width: 80vw;
+    margin: -2rem 3rem 2rem 4rem;
 }
