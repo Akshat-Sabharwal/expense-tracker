@@ -77,32 +77,49 @@ nav ul li .navbar-icon {
     color: #1A2E35;
 }
 
-main {
+main section {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-left: 6rem;
 }
 
-main article {
+main section article {
     margin: 0 0 0 5rem;
     max-width: fit-content;
     padding-right: 3rem;
 }
 
-main article h1 {
+main section article h1 {
     font-size: 4rem;
-    margin: -3rem 0 2rem 0;
-    line-height: 5rem;
+    margin: -3rem 1rem 2rem 0;
+    line-height: 4.8rem;
 }
 
-main article button {
+main section article button {
     margin-top: 4rem;
 }
 
-main img {
+main section img {
     width: 80vw;
     margin: -2rem 3rem 2rem 4rem;
+}
+
+main #second {
+    margin-bottom: 5rem;
+}
+
+main #second img {
+    width: 50vw;
+    margin: 2rem 0rem 2rem 2rem;
+}
+
+main #second article h1 {
+    line-height: 4.8rem;
+}
+
+main #second article p {
+    margin-right: 2rem;
 }
 
 footer {
