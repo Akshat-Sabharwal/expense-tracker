@@ -98,6 +98,16 @@ main section article h1 {
 
 main section article button {
     margin-top: 4rem;
+    transition: 0.5s ease;
+}
+
+main section article button:hover {
+    transform: scale(1.1);
+}
+
+main section article button .link {
+    text-decoration: none;
+    color: white;
 }
 
 main section img {
@@ -105,9 +115,6 @@ main section img {
     margin: -2rem 3rem 2rem 4rem;
 }
 
-main #second {
-    margin-bottom: 5rem;
-}
 
 main #second img {
     width: 50vw;

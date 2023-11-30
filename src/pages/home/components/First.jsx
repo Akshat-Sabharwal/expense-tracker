@@ -1,4 +1,5 @@
 import sideImage from "../../../assets/side-image.png";
+import { Link, Outlet } from "react-router-dom";
 
 export const First = () => {
   return (
@@ -12,9 +13,14 @@ export const First = () => {
           cupidatat mollit exercitation voluptate id. Commodo ad exercitation
           magna ex in aliqua quis.
         </p>
-        <button>Get Started</button>
+        <button>
+          <Link to="/authentication" className="link">
+            Get Started
+          </Link>
+        </button>
       </article>
       <img src={sideImage} alt="Save your expenses" />
+      <Outlet />
     </section>
   );
 };
