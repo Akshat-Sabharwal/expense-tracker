@@ -1,19 +1,154 @@
 * {
     margin: 0;
     padding: 0;
-    border: 0.1rem solid grey;
+    outline: none;
 }
 
 .auth {
-    background: darkgray;
-    margin: auto;
+    height: 100%;
+    overflow: hidden;
+}
+
+.auth header {
+    width: 100%;
+    top: 0;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 2.5rem;
+}
+
+.auth header .back {
+    height: fit-content;
+    padding: 1.2rem 1.8rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: #1A2E35;
+    transition: 0.3s ease;
+}
+
+.auth header .back:hover {
+    background-color: #1A2E35;
+    color: white;
+}
+
+.auth .main {
+    margin: 0rem auto;
     width: 100%;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    gap: 7rem;
+}
+
+.auth .main .left {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
     align-items: center;
 }
 
-.auth #left img {
-    height: 50vh;
+.auth .main .left img {
+    max-height: 60vh;
+}
+
+.auth .main .divider {
+    border: 0.1rem solid grey;
+    height: 70vh;
+
+}
+
+.auth .main .right form {
+    background: #D5F7E6;
+    border-radius: 2.5rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 3rem;
+    max-width: 50vw;
+}
+
+.auth .main .right form h2 {
+    font-size: 2.5rem;
+    color: #57D89F;
+}
+
+.auth .main .right form fieldset {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    text-align: start;
+    border: none;
+}
+
+.auth .main .right form fieldset input {
+    font-size: 1.3rem;
+    border-radius: 3rem;
+    padding: 0.8rem 1.7rem;
+    margin: 0rem 1rem;
+    border: none;
+    max-width: 15vw;
+}
+
+.auth .main .right form fieldset p {
+    color: red;
+    margin-top: -1.2rem;
+    font-size: 0.9rem;
+}
+
+.auth .main .right form #submit {
+    border: none;
+    padding: 0.8rem 1.5rem;
+    margin: 1rem;
+    border-radius: 3rem;
+    font-size: 1.3rem;
+    background-color: #1A2E35;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.auth .main .right form #submit:hover {
+    transform: scale(1.1);
+}
+
+.auth .main .right form #submit:active {
+    background-color: #0f1f24;
+    transform: scale(1);
+}
+
+.auth .main .right form #submit:disabled {
+    background: grey;
+    transform: none;
+}
+
+@media (max-width: 1160px) {
+
+    .auth .main {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .auth .main .right {
+        padding: 0;
+    }
+
+    .auth .main .left,
+    .auth .main .divider {
+        display: none;
+    }
+
+    .auth .main .right form {
+        min-width: 40vw;
+        margin: none;
+    }
+
+    .auth .main .right form fieldset input {
+        min-width: 27vw;
+    }
 }

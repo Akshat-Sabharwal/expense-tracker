@@ -6,11 +6,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
+.home {
     height: 100%;
 }
 
-button {
+.home button {
     color: white;
     background-color: #1A2E35;
     outline: none;
@@ -21,16 +21,16 @@ button {
     min-width: max-content;
 }
 
-header {
+.home header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 0 1rem 6rem;
+    margin: 0 0 1rem 7rem;
     padding: 1rem;
     max-width: 100%;
 }
 
-header span {
+.home header span {
     margin-left: 2.5rem;
     padding: 1rem 1rem;
     max-width: fit-content;
@@ -40,96 +40,114 @@ header span {
     gap: 2rem;
 }
 
-header span img {
+.home header span img {
     max-height: 10vh;
 }
 
-header span h1 {
+.home header span h1 {
     font-size: 3rem;
     letter-spacing: 0.2rem;
     color: #1A2E35;
 }
 
-nav {
+.home nav {
     background-color: #D5F7E6;
     position: fixed;
     height: 100vh;
     width: 6rem;
     top: 0;
+    padding: 2rem 0;
 }
 
-nav ul {
+.home nav ul {
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
     gap: 5rem;
     list-style: none;
-    margin: 2rem 0rem;
 }
 
-nav ul li:nth-child(1) .navbar-icon {
+.home nav ul li {
+    padding: 0.2rem;
+    transition: 0.3s ease;
+}
+
+.home nav ul li:nth-child(1) .navbar-icon {
     font-size: 2.5rem;
 }
 
-nav ul li .navbar-icon {
+.home nav ul li .navbar-icon {
     font-size: 1.7rem;
     color: #1A2E35;
 }
 
-main section {
+.home nav ul li:hover {
+    transform: scale(1.1);
+}
+
+.home nav ul li:active {
+    transform: scale(1);
+}
+
+.home main section {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-left: 6rem;
 }
 
-main section article {
+.home main section article {
     margin: 0 0 0 5rem;
     max-width: fit-content;
     padding-right: 3rem;
 }
 
-main section article h1 {
-    font-size: 4rem;
+.home main section article h1 {
+    font-size: 3.5rem;
+    font-weight: bolder;
     margin: -3rem 1rem 2rem 0;
     line-height: 4.8rem;
 }
 
-main section article button {
+.home main section article button {
     margin-top: 4rem;
     transition: 0.5s ease;
 }
 
-main section article button:hover {
+.home main section article button:hover {
     transform: scale(1.1);
 }
 
-main section article button .link {
+.home main section article button:active {
+    background-color: #122228;
+}
+
+.home main section article button .link {
     text-decoration: none;
     color: white;
 }
 
-main section img {
+.home main section img {
     width: 80vw;
     margin: -2rem 3rem 2rem 4rem;
 }
 
 
-main #second img {
+.home main #second img {
     width: 50vw;
     margin: 2rem 0rem 2rem 2rem;
 }
 
-main #second article h1 {
+.home main #second article h1 {
     line-height: 4.8rem;
 }
 
-main #second article p {
+.home main #second article p {
     margin-right: 2rem;
 }
 
-footer {
+.home footer {
     bottom: 0;
     display: flex;
     flex-flow: row wrap;
@@ -139,13 +157,13 @@ footer {
     padding: 3rem;
 }
 
-footer h1 {
+.home footer h1 {
     margin: 1.5rem -3rem 2rem 3rem;
     color: #6c6c6c;
     font-size: 3rem;
 }
 
-footer ul {
+.home footer ul {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
@@ -154,7 +172,7 @@ footer ul {
     list-style: none;
 }
 
-footer ul li {
+.home footer ul li {
     height: 4rem;
     width: 4rem;
     background-color: #1A2E35;
@@ -167,19 +185,19 @@ footer ul li {
     gap: 0.2rem;
 }
 
-footer ul li .socials {
+.home footer ul li .socials {
     color: white;
     font-size: 2.5rem;
 }
 
-footer ul li a {
+.home footer ul li a {
     color: white;
     text-decoration: none;
     font-size: 1rem;
     margin-top: 0.4rem;
 }
 
-footer p {
+.home footer p {
     color: grey;
     font-size: 1.2rem;
     margin: -1rem -1rem 0 0;

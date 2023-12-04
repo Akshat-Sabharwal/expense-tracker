@@ -1,5 +1,5 @@
 import sideImage from "../../../assets/side-image.png";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const First = () => {
   return (
@@ -20,7 +20,6 @@ export const First = () => {
         </button>
       </article>
       <img src={sideImage} alt="Save your expenses" />
-      <Outlet />
     </section>
   );
 };

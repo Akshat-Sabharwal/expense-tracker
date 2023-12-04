@@ -6,11 +6,11 @@ import "./Home.css";
 
 export const Home = () => {
   return (
-    <>
+    <body className="home">
       <Header />
       <Navbar />
       <Main />
       <Footer />
-    </>
+    </body>
   );
 };

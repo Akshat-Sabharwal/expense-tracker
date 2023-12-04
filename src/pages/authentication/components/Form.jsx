@@ -1,21 +1,106 @@
-import authForm from "../../../assets/form.png";
+import { useReducer } from "react";
+import { Link } from "react-router-dom";
 
 export const Form = () => {
+  const initialState = {
+    username: "",
+    password: "",
+    usernameValid: false,
+    passwordValid: false,
+  };
+
+  const reducer = (state, action) => {
+    switch (action.type) {
+      case "username":
+        return { ...state, username: action.value };
+
+      case "password":
+        return { ...state, password: action.value };
+
+      case "usernameValid":
+        return { ...state, usernameValid: action.value };
+
+      case "passwordValid":
+        return { ...state, passwordValid: action.value };
+
+      default:
+        return state;
+    }
+  };
+
+  const [formState, dispatch] = useReducer(reducer, initialState);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  const validateInput = (type, value) => {
+    if (type === "username") {
+      value.length === 0
+        ? dispatch({ type: "usernameValid", value: false })
+        : dispatch({ type: "usernameValid", value: true });
+    } else if (type === "password") {
+      value.length < 8
+        ? dispatch({ type: "passwordValid", value: false })
+        : dispatch({ type: "passwordValid", value: true });
+    } else {
+      return;
+    }
+  };
+
   return (
-    <section className="auth">
-      <aside id="left">
-        <h1>Form</h1>
-        <img src={authForm} alt="Authentication Form" />
-      </aside>
-      <aside id="right">
-        <form>
-          <fieldset>
-            <input type="text" placeholder="Username" id="username" />
-            <input type="password" placeholder="Password" id="password" />
-          </fieldset>
-          <input type="submit" id="submit" />
-        </form>
-      </aside>
-    </section>
+    <form onSubmit={handleSubmit}>
+      <h2>Login</h2>
+      <fieldset>
+        <input
+          type="text"
+          placeholder="Username"
+          id="username"
+          value={formState.username}
+          onChange={(e) => {
+            validateInput("username", e.target.value);
+            dispatch({ type: "username", value: e.target.value });
+          }}
+        />
+        {!formState.usernameValid && (
+          <p
+            style={{
+              fontSize: "0.9rem",
+              margin: "-1.5rem 0rem 0rem 2.5rem",
+              letterSpacing: "0.05rem",
+              alignSelf: "flex-start",
+            }}
+          >
+            Enter your username
+          </p>
+        )}
+        <input
+          type="password"
+          placeholder="Password"
+          id="password"
+          value={formState.password}
+          onChange={(e) => {
+            validateInput("password", e.target.value);
+            dispatch({ type: "password", value: e.target.value });
+          }}
+        />
+        {!formState.passwordValid && (
+          <p style={{ alignSelf: "flex-start", marginLeft: "2.5rem" }}>
+            Password of atleast 8 characters
+          </p>
+        )}
+      </fieldset>
+      <Link to="/dashboard">
+        <input
+          type="submit"
+          id="submit"
+          disabled={
+            formState.passwordValid === true && formState.usernameValid === true
+              ? false
+              : true
+          }
+        />
+      </Link>
+    </form>
   );
 };

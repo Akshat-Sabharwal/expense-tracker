@@ -6,31 +6,40 @@ import {
   faInfo,
   faCircleUser,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
-  const navbarItems = [
-    { name: "Home", icon: faHome },
-    { name: "Tracker", icon: faTools },
-    { name: "Login", icon: faUser },
-    { name: "About", icon: faInfo },
-  ];
   return (
     <nav>
       <ul>
         <li>
-          <FontAwesomeIcon icon={faCircleUser} className="navbar-icon" />
+          <Link to="/profile">
+            <FontAwesomeIcon icon={faCircleUser} className="navbar-icon" />
+          </Link>
         </li>
+
         <li>
-          <FontAwesomeIcon icon={faHome} className="navbar-icon" />
+          <Link to="/">
+            <FontAwesomeIcon icon={faHome} className="navbar-icon" />
+          </Link>
         </li>
+
         <li>
-          <FontAwesomeIcon icon={faTools} className="navbar-icon" />
+          <Link to="/dashboard">
+            <FontAwesomeIcon icon={faTools} className="navbar-icon" />
+          </Link>
         </li>
+
         <li>
-          <FontAwesomeIcon icon={faUser} className="navbar-icon" />
+          <Link to="/authentication">
+            <FontAwesomeIcon icon={faUser} className="navbar-icon" />
+          </Link>
         </li>
+
         <li>
-          <FontAwesomeIcon icon={faInfo} className="navbar-icon" />
+          <Link to="/info">
+            <FontAwesomeIcon icon={faInfo} className="navbar-icon" />
+          </Link>
         </li>
       </ul>
     </nav>
