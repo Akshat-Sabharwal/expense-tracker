@@ -1,3 +1,10 @@
+import "./Dashboard.css";
+import { Header } from "./components/Header";
+
 export const Dashboard = () => {
-  return <h1>Dashboard</h1>;
+  return (
+    <body className="dash">
+      <Header />
+    </body>
+  );
 };
