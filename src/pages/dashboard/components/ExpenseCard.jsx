@@ -19,7 +19,7 @@ export const ExpenseCard = ({ amount, description, tags }) => {
           color: "#1A2E35",
         }}
       >
-        $1300
+        ${amount}
       </h1>
       <p
         style={{
@@ -27,23 +27,28 @@ export const ExpenseCard = ({ amount, description, tags }) => {
           marginBottom: "0.5rem",
         }}
       >
-        Nostrud amet tempor fugiat mollit est mollit adipisicing voluptate
-        incididunt. Dolore reprehenderit quis eu sint pariatur ullamco aute
-        magna anim magna laborum est voluptate amet. Magna laboris et excepteur
-        veniam irure labore elit consectetur fugiat Lorem aute consequat
-        occaecat. Cillum sunt esse occaecat incididunt elit enim eu. Nostrud
-        proident culpa deserunt eiusmod.
+        {description}
       </p>
-      <span
+      <div
         style={{
-          color: "#1a2e35",
-          backgroundColor: "#87d7af",
-          padding: "0.5rem 1rem",
-          borderRadius: "5rem",
+          display: "inline-block",
+          marginTop: "0.6rem",
         }}
       >
-        Food
-      </span>
+        {tags.map((tag) => (
+          <span
+            style={{
+              color: "white",
+              backgroundColor: "#87d7af",
+              padding: "0.5rem 1rem",
+              borderRadius: "5rem",
+              margin: "0rem 0.7rem 0.2rem 0rem",
+            }}
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
     </div>
   );
 };

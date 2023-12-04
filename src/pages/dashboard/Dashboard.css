@@ -47,6 +47,37 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(auto-fill, 1fr);
-    grid-gap: 2.5rem;
-    padding: 3rem;
+    grid-gap: 4rem;
+    padding: 4rem;
+}
+
+.dash main form {
+    position: fixed;
+    bottom: 4rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: row;
+    gap: 1rem;
+}
+
+.dash main form input,
+.dash main form select {
+    padding: 1.2rem 1.5rem;
+    appearance: none;
+    border: none;
+    border-radius: 3rem;
+    font-size: 1.3rem;
+    background: #D5F7E6;
+}
+
+.dash main form input:nth-child(2) {
+    width: 30vw;
+}
+
+.dash main form input:last-of-type {
+    padding: 0rem 1.2rem;
+    background-color: #1A2E35;
+    color: white;
+    font-size: 2.8rem;
 }
