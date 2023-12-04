@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <header>
       <span>
-        <FontAwesomeIcon icon={faCube} />
+        <FontAwesomeIcon icon={faCube} id="dashboard" />
         <h1>Dashboard</h1>
       </span>
       <FontAwesomeIcon icon={faCircleUser} id="profile" />
