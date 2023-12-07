@@ -1,5 +1,7 @@
 import { useReducer } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../../../Context/UserContext";
 
 export const Form = () => {
   const initialState = {
@@ -29,9 +31,17 @@ export const Form = () => {
   };
 
   const [formState, dispatch] = useReducer(reducer, initialState);
+  const { currentUser, setCurrentUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("something...");
+    setCurrentUser({
+      username: formState.username,
+      password: formState.password,
+    });
+    navigate("/dashboard");
   };
 
   const validateInput = (type, value) => {
@@ -90,17 +100,18 @@ export const Form = () => {
           </p>
         )}
       </fieldset>
-      <Link to="/dashboard">
-        <input
-          type="submit"
-          id="submit"
-          disabled={
-            formState.passwordValid === true && formState.usernameValid === true
-              ? false
-              : true
-          }
-        />
-      </Link>
+
+      <button
+        type="submit"
+        id="submit"
+        disabled={
+          formState.passwordValid === true && formState.usernameValid === true
+            ? false
+            : true
+        }
+      >
+        Submit
+      </button>
     </form>
   );
 };

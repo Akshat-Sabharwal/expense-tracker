@@ -1,7 +1,7 @@
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useState } from "react";
-import { ExpenseContext } from "../../../Context/ExpenseContext";
+import { ExpenseContext } from "../../../context/ExpenseContext";
 
 export const ExpenseCard = ({ id, amount, description, tag }) => {
   const [hover, setHover] = useState(false);

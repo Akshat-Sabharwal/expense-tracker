@@ -1,7 +1,7 @@
 import { useState, useContext, useReducer, useEffect } from "react";
 import { ExpenseContext } from "../../../Context/ExpenseContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCancel, faCross } from "@fortawesome/free-solid-svg-icons";
+import { faCancel } from "@fortawesome/free-solid-svg-icons";
 
 export const InputArea = ({ visible, setVisibility }) => {
   const [tags, setTags] = useState([
@@ -49,16 +49,18 @@ export const InputArea = ({ visible, setVisibility }) => {
   const [formState, dispatch] = useReducer(reducer, initialState);
 
   const handleSubmit = (e) => {
-    setExpenses((prevState) => [
-      ...prevState,
-      {
-        id: `${formState.amount}${formState.description}${formState.tag}`,
-        amount: formState.amount,
-        description: formState.description,
-        tag: formState.tag,
-      },
-    ]);
-    dispatch({ type: "update" });
+    if (formState.amount !== undefined && formState.description !== "") {
+      setExpenses((prevState) => [
+        ...prevState,
+        {
+          id: `${formState.amount}${formState.description}${formState.tag}`,
+          amount: formState.amount,
+          description: formState.description,
+          tag: formState.tag,
+        },
+      ]);
+      dispatch({ type: "update" });
+    }
     e.preventDefault();
   };
   return (

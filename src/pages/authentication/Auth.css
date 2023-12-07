@@ -108,8 +108,10 @@
     font-size: 1.3rem;
     background-color: #1A2E35;
     color: white;
+    text-decoration: none;
     transition: 0.3s ease;
 }
+
 
 .auth .main .right form #submit:hover {
     transform: scale(1.1);
