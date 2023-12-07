@@ -35,30 +35,52 @@
 }
 
 .dash main {
-    background-color: grey;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-flow: column wrap;
 }
 
-.dash main .grid {
-    background-color: darkgrey;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(auto-fill, 1fr);
-    grid-gap: 4rem;
-    padding: 4rem;
+.dash main #addExpense {
+    position: fixed;
+    bottom: 4rem;
+    right: 4rem;
+    padding: 0.3rem 1.8rem;
+    background-color: #1A2E35;
+    color: white;
+    font-size: 3.6rem;
+    border-radius: 4rem;
+    border: none;
 }
 
 .dash main form {
     position: fixed;
-    bottom: 4rem;
+    width: 80%;
+    bottom: 0;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    flex-flow: row;
+    flex-flow: row wrap;
     gap: 1rem;
+    background-color: white;
+    padding-bottom: 4rem;
+    padding-top: 1rem;
+}
+
+.dash main form #toggleVisibility {
+    background: none;
+    color: rgb(190, 190, 190);
+    border: none;
+    font-size: 2.6rem;
+    transition: 0.3s ease;
+}
+
+.dash main form #toggleVisibility:hover {
+    color: rgb(158, 158, 158);
+}
+
+.dash main form #toggleVisibility:active {
+    color: rgb(118, 118, 118);
 }
 
 .dash main form input,
@@ -69,6 +91,7 @@
     border-radius: 3rem;
     font-size: 1.3rem;
     background: #D5F7E6;
+    color: #1A2E35;
 }
 
 .dash main form input:nth-child(2) {
@@ -80,4 +103,8 @@
     background-color: #1A2E35;
     color: white;
     font-size: 2.8rem;
+}
+
+.dash main form select option:hover {
+    background: #bae3ce;
 }

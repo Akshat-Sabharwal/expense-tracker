@@ -1,7 +1,9 @@
 import { useState, useContext, useReducer, useEffect } from "react";
 import { ExpenseContext } from "../../../Context/ExpenseContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCancel, faCross } from "@fortawesome/free-solid-svg-icons";
 
-export const InputArea = () => {
+export const InputArea = ({ visible, setVisibility }) => {
   const [tags, setTags] = useState([
     "Food",
     "Tech",
@@ -13,44 +15,67 @@ export const InputArea = () => {
   const initialState = {
     amount: undefined,
     description: "",
-    tags: [],
+    tag: "",
   };
 
   const reducer = (state, action) => {
     switch (action.type) {
       case "amount":
-        return { ...state, amount: action.value };
+        return {
+          ...state,
+          amount: action.value,
+        };
 
       case "description":
-        return { ...state, description: action.value };
+        return {
+          ...state,
+          description: action.value,
+        };
 
       case "tag":
-        return { ...state, tags: [...state.tags, action.value] };
+        return {
+          ...state,
+          tag: action.value,
+        };
 
       case "update":
-        return initialState;
+        state = initialState;
+        state.amount = "";
+        return state;
     }
   };
 
   const { expenses, setExpenses } = useContext(ExpenseContext);
   const [formState, dispatch] = useReducer(reducer, initialState);
 
-  useEffect(() => console.log(formState), [formState]);
-
   const handleSubmit = (e) => {
     setExpenses((prevState) => [
       ...prevState,
       {
+        id: `${formState.amount}${formState.description}${formState.tag}`,
         amount: formState.amount,
         description: formState.description,
-        tags: formState.tags,
+        tag: formState.tag,
       },
     ]);
     dispatch({ type: "update" });
     e.preventDefault();
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      style={{
+        visibility: visible === true ? "visible" : "hidden",
+      }}
+    >
+      <button
+        onClick={() => {
+          setVisibility(!visible);
+        }}
+        id="toggleVisibility"
+      >
+        <FontAwesomeIcon icon={faCancel} />
+      </button>
       <input
         type="number"
         placeholder="Amount"
@@ -67,13 +92,18 @@ export const InputArea = () => {
       />
       <select
         placeholder="Choose"
-        value={formState.tags[0]}
+        value={formState.tag}
         onChange={(e) => {
           dispatch({ type: "tag", value: e.target.value });
-          console.log(e.target.value);
         }}
       >
-        <option value="" disabled defaultValue>
+        <option
+          value=""
+          disabled
+          style={{
+            color: "grey",
+          }}
+        >
           Choose
         </option>
         {tags.map((tag) => (
