@@ -71,10 +71,16 @@
 .home nav ul li {
     padding: 0.2rem;
     transition: 0.3s ease;
+    text-align: center;
+
 }
 
 .home nav ul li:nth-child(1) .navbar-icon {
     font-size: 2.5rem;
+}
+
+.home nav ul li .link p {
+    display: none;
 }
 
 .home nav ul li .navbar-icon {

@@ -1,0 +1,18 @@
+.error-container {
+    margin: 0rem auto;
+    padding: 5rem;
+    text-align: center;
+}
+
+.error-container img {
+    opacity: 0.8;
+    max-height: 60vh;
+}
+
+.error-container h1 {
+    font-size: 4rem;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.7rem;
+    color: #1A2E35;
+    opacity: 0.8;
+}

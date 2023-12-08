@@ -3,7 +3,6 @@ import { Header } from "./components/Header";
 import { ExpenseGrid } from "./components/ExpenseGrid.jsx";
 import { InputArea } from "./components/InputArea.jsx";
 import { ExpenseContextProvider } from "../../Context/ExpenseContext.jsx";
-import { UserContextProvider } from "../../Context/UserContext.jsx";
 import { useState } from "react";
 
 export const Dashboard = () => {

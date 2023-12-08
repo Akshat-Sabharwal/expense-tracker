@@ -51,6 +51,44 @@
     flex-flow: column wrap;
 }
 
+.dash header nav {
+    padding: 0.5rem;
+    padding-top: 1em;
+    margin-left: -3rem;
+}
+
+.dash header nav ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    list-style: none;
+}
+
+.dash header nav ul li {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.dash header nav ul li .link {
+    text-decoration: none;
+    color: #1A2E35;
+}
+
+.dash header nav ul li .navbar-icon {
+    font-size: 1.8rem;
+    transition: 0.3s ease;
+}
+
+.dash header nav ul li .link:hover .navbar-icon {
+    transform: scale(1.1);
+}
+
+.dash header nav ul li .link:active .navbar-icon {
+    transform: scale(1);
+}
+
 .dash main #addExpense {
     position: fixed;
     bottom: 4rem;

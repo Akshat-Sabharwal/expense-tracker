@@ -8,7 +8,7 @@ export const Home = () => {
   return (
     <body className="home">
       <Header />
-      <Navbar />
+      <Navbar showProfile={true} />
       <Main />
       <Footer />
     </body>
