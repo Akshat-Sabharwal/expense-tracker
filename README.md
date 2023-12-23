@@ -19,7 +19,7 @@ It has three interactive and responsive pages.
   This is the crux of the app. Herein, the user can
     - Add an expense by clicking on the `+` button and adding in the data.
     - Hide the input area by clicking on the `Cancel` button.
-    - Delete the expense added by clciking on the _trash icon_.
+    - Delete the expense added by clicking on the _trash icon_.
 
   Also, the user profile gets displayed on the top-right corner.
 
